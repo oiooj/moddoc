@@ -29,6 +29,7 @@ type Documentation struct {
 	GoMod         template.HTML
 	Readme        []byte
 	Licenses      []*licenses.License
+	GithubRepo    GithubRepo
 	CreateTime    time.Time
 	UpdateTime    time.Time
 }
@@ -121,4 +122,19 @@ type Subdir struct {
 	Name     string
 	Synopsis string
 	Link     string
+}
+
+// GithubRepo represents github repo meta data.
+type GithubRepo struct {
+	FullName        string
+	Description     string
+	Homepage        string
+	Fork            bool
+	ForksCount      int
+	PushedAt        time.Time
+	CreatedAt       time.Time
+	StargazersCount int
+	WatchersCount   int
+	License         string
+	DefaultBranch   string
 }
