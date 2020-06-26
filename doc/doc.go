@@ -29,6 +29,8 @@ type Documentation struct {
 	GoMod         template.HTML
 	Readme        []byte
 	Licenses      []*licenses.License
+	CreateTime    time.Time
+	UpdateTime    time.Time
 }
 
 // Value represents one or a group of constants/variables
