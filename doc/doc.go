@@ -126,15 +126,15 @@ type Subdir struct {
 
 // GithubRepo represents github repo meta data.
 type GithubRepo struct {
-	FullName        string
-	Description     string
-	Homepage        string
-	Fork            bool
-	ForksCount      int
+	FullName        *string
+	Description     *string
+	Homepage        *string
+	Fork            *bool
+	ForksCount      *int
 	PushedAt        time.Time
 	CreatedAt       time.Time
-	StargazersCount int
-	WatchersCount   int
-	License         string
-	DefaultBranch   string
+	StargazersCount *int
+	WatchersCount   *int
+	License         *string
+	DefaultBranch   *string
 }
