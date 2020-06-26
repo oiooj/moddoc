@@ -8,8 +8,8 @@ import (
 	"net/http"
 	"strings"
 
-	"marwan.io/moddoc/fetch"
-	gomodule "marwan.io/moddoc/gocopy/module"
+	"github.com/oiooj/moddoc/fetch"
+	gomodule "github.com/oiooj/moddoc/gocopy/module"
 )
 
 func getModule(w http.ResponseWriter, r *http.Request) {

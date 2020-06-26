@@ -24,7 +24,7 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"marwan.io/moddoc/gocopy/semver"
+	"github.com/oiooj/moddoc/gocopy/semver"
 )
 
 // A Version is defined by a module path and version pair.

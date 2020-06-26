@@ -18,9 +18,9 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	proxydoc "marwan.io/moddoc/doc"
-	"marwan.io/moddoc/gocopy/modfile"
-	"marwan.io/moddoc/gocopy/module"
+	proxydoc "github.com/oiooj/moddoc/doc"
+	"github.com/oiooj/moddoc/gocopy/modfile"
+	"github.com/oiooj/moddoc/gocopy/module"
 )
 
 type builder struct {

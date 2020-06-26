@@ -14,9 +14,9 @@ import (
 	"strings"
 	"unicode"
 
-	"marwan.io/moddoc/gocopy/lazyregexp"
-	"marwan.io/moddoc/gocopy/module"
-	"marwan.io/moddoc/gocopy/semver"
+	"github.com/oiooj/moddoc/gocopy/lazyregexp"
+	"github.com/oiooj/moddoc/gocopy/module"
+	"github.com/oiooj/moddoc/gocopy/semver"
 )
 
 // A File is the parsed, interpreted form of a go.mod file.

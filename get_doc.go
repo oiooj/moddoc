@@ -4,8 +4,8 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	gomodule "marwan.io/moddoc/gocopy/module"
-	"marwan.io/moddoc/proxy"
+	gomodule "github.com/oiooj/moddoc/gocopy/module"
+	"github.com/oiooj/moddoc/proxy"
 )
 
 const docPath = "/{module:.+}/@v/{version}"

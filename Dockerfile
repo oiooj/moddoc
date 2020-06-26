@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN GOPROXY=https://proxy.golang.org CGO_ENABLED=0 go build -o=/app/moddoc
+RUN GOPROXY=https://goproxy.io CGO_ENABLED=0 go build -o=/app/moddoc
 
 FROM busybox
 

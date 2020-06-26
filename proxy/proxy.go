@@ -11,9 +11,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	proxydoc "marwan.io/moddoc/doc"
-	"marwan.io/moddoc/fetch"
-	"marwan.io/moddoc/gocopy/module"
+	proxydoc "github.com/oiooj/moddoc/doc"
+	"github.com/oiooj/moddoc/fetch"
+	"github.com/oiooj/moddoc/gocopy/module"
 )
 
 // Service can return a valid godoc

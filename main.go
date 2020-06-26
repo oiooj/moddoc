@@ -13,14 +13,14 @@ import (
 	"strings"
 
 	// embedded files
-	_ "marwan.io/moddoc/statik"
+	_ "github.com/oiooj/moddoc/statik"
 
 	"github.com/gorilla/mux"
 	"github.com/kelseyhightower/envconfig"
+	"github.com/oiooj/moddoc/fetch"
+	"github.com/oiooj/moddoc/gocopy/semver"
+	"github.com/oiooj/moddoc/proxy"
 	"github.com/rakyll/statik/fs"
-	"marwan.io/moddoc/fetch"
-	"marwan.io/moddoc/gocopy/semver"
-	"marwan.io/moddoc/proxy"
 )
 
 //go:generate statik -src=frontend

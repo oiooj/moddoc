@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"strings"
 
-	"marwan.io/moddoc/fetch"
+	"github.com/oiooj/moddoc/fetch"
 )
 
 type listResp struct {

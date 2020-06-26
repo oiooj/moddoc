@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"time"
 
-	"marwan.io/moddoc/fetch"
+	"github.com/oiooj/moddoc/fetch"
 )
 
 type indexResponse struct {

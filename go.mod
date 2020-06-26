@@ -1,6 +1,6 @@
-module marwan.io/moddoc
+module github.com/oiooj/moddoc
 
-go 1.12
+go 1.13
 
 require (
 	github.com/gorilla/mux v1.7.0
