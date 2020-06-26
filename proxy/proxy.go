@@ -14,6 +14,7 @@ import (
 	proxydoc "github.com/oiooj/moddoc/doc"
 	"github.com/oiooj/moddoc/fetch"
 	"github.com/oiooj/moddoc/gocopy/module"
+	"github.com/oiooj/moddoc/licenses"
 )
 
 // Service can return a valid godoc
@@ -82,6 +83,9 @@ func (s *service) GetDoc(ctx context.Context, mod, ver string) (*proxydoc.Docume
 	if err != nil {
 		return nil, err
 	}
+	//license
+	detector := licenses.NewDetector(mod, ver, zipReader, nil)
+	proxyDoc.Licenses = detector.ModuleLicenses()
 	proxyDoc.ModuleRoot, _ = module.DecodePath(modRoot)
 	proxyDoc.Versions = <-versCh
 	return proxyDoc, err
@@ -110,7 +114,11 @@ func (s *service) getVersions(ctx context.Context, mod string) chan []string {
 			fmt.Println(err)
 			return
 		}
-		ch <- strings.Split(string(bts), "\n")
+		vs := strings.Split(string(bts), "\n")
+		if len(vs) > 0 {
+			vs = vs[:len(vs)-1]
+		}
+		ch <- vs
 	}()
 	return ch
 }

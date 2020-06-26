@@ -2,6 +2,9 @@ package doc
 
 import (
 	"html/template"
+	"time"
+
+	"github.com/oiooj/moddoc/licenses"
 )
 
 // Documentation is the data structure
@@ -9,6 +12,8 @@ import (
 type Documentation struct {
 	PackageName   string
 	ModuleVersion string
+	PublishedTime time.Time
+	Latest        bool
 	Versions      []string
 	ModuleRoot    string
 	ImportPath    string
@@ -22,6 +27,8 @@ type Documentation struct {
 	Subdirs       []*Subdir
 	NavLinks      []string
 	GoMod         template.HTML
+	Readme        []byte
+	Licenses      []*licenses.License
 }
 
 // Value represents one or a group of constants/variables

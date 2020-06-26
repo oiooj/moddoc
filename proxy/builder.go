@@ -37,6 +37,7 @@ func (b *builder) getGoDoc(ctx context.Context, mod, ver, subpkg string, files [
 	// TODO: parse sub directories to get synopsis
 	pkgFiles := []*proxydoc.File{}
 	testFiles := []*ast.File{}
+	var readme []byte
 	for _, f := range files {
 		if filepath.Base(f.Name) == "go.mod" {
 			modf, err := modfile.Parse("go.mod", f.Content, nil)
@@ -44,6 +45,11 @@ func (b *builder) getGoDoc(ctx context.Context, mod, ver, subpkg string, files [
 				return nil, err
 			}
 			b.mods = append(b.mods, &modFile{path: filepath.Dir(f.Name), file: modf})
+			continue
+		}
+		// readme file
+		if filepath.Base(f.Name) == "README.md" {
+			readme = f.Content
 			continue
 		}
 		if filepath.Ext(f.Name) != ".go" {
@@ -87,6 +93,7 @@ func (b *builder) getGoDoc(ctx context.Context, mod, ver, subpkg string, files [
 	d.Files = pkgFiles
 	d.Examples = b.getExamples("")
 	d.ModuleVersion = ver
+	d.Readme = readme
 	for subDir := range dirMap {
 		d.Subdirs = append(d.Subdirs, &proxydoc.Subdir{
 			Name:     subDir,
