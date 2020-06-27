@@ -366,9 +366,7 @@ func (b *builder) getExamples(name string) []*proxydoc.Example {
 		}
 		n := e.Name[len(name):]
 		if n != "" {
-			if i := strings.LastIndex(n, "_"); i != 0 {
-				continue
-			}
+			n = strings.ReplaceAll(n, "_", ".")
 			n = n[1:]
 			if startsWithUppercase(n) {
 				continue
