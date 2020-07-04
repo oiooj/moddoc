@@ -276,6 +276,9 @@ func (b *builder) getConsts(cc []*doc.Value) []*proxydoc.Value {
 					IsGroup: false,
 					Name:    n,
 				}
+				if idx >= len(c.Decl.Specs) {
+					continue
+				}
 				spec, ok := c.Decl.Specs[idx].(*ast.ValueSpec)
 				if !ok {
 					fmt.Printf("unrecognized group spec type: %T\n", c.Decl.Specs[idx])
