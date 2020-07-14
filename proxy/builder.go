@@ -86,6 +86,7 @@ func (b *builder) getGoDoc(ctx context.Context, mod, ver, subpkg string, files [
 	doc.ToHTML(&sb, dpkg.Doc, nil)
 	d.PackageDoc = template.HTML(sb.String())
 	d.ImportPath, _ = module.DecodePath(mod)
+	//info :=
 	d.Constants = b.getConsts(dpkg.Consts)
 	d.Variables = b.getConsts(dpkg.Vars)
 	d.Funcs = b.getFuncs(dpkg.Funcs, "")
