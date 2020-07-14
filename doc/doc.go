@@ -55,6 +55,7 @@ type Func struct {
 	// MethodReceiver  *MethodReceiver // TODO: later
 	MethodReceiverString string
 	Examples             []*Example
+	Link                 string
 }
 
 // FunctionSignature represents a function or method signature
@@ -91,6 +92,7 @@ type Type struct {
 	Funcs           []*Func
 	Constants       []*Value
 	Variables       []*Value
+	Link            string
 }
 
 // Field is a struct filed
@@ -112,7 +114,7 @@ type MethodReceiver struct {
 // File represents a go file inside a package
 type File struct {
 	Name string
-	// Future: link
+	Link string
 }
 
 // Subdir represents a potential sub package.
