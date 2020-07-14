@@ -151,7 +151,8 @@ func (s *service) makeZip(ctx context.Context, mod, ver string) (string, string,
 		return dir, file, "", err
 	}
 	defer f.Close()
-	_, err = io.Copy(f, resp.Body)
+	buffer := make([]byte, 1024*1024)
+	_, err = io.CopyBuffer(f, resp.Body, buffer)
 	return dir, file, subdir, err
 }
 
